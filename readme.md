@@ -67,7 +67,7 @@ Screenshots:
 To view the screenshots for each featured news after clicking on it, reach "screenshots" Folder: /Hackathon Main/screenshots
 
 
-Excel File and Text file to store information of Courses:
+Excel File and Text file to store information of courses, languages and it's levels:
 ---------------------------------------------------------------
 1.To view count and courses in excel file, reach to "src/test/resources" :  /Hackathon Main/src/test/resources/courseData.xlsx.
 
