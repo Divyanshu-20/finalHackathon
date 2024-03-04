@@ -10,6 +10,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 				"html:reports/myreport.html", // for cucumber report
 				"rerun:target/rerun.txt", // capturing failure scenarios
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
+		
 		// Generating
 		// extent
 		// report

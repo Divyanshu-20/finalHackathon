@@ -26,7 +26,7 @@ Feature: Identify Courses
     And the user scrolls down to the level section
     Then the user extracts all levels
 
-  Scenario: Submit Contact Us Form
+  Scenario: Invalid Email Login
     Given the user is on the Coursera homepage
     When the user navigates to For Enterprise then to Solutions then to Coursera for Campus and finally to Contact Us
     Then the user should be on the Contact Us page

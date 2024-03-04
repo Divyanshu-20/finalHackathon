@@ -4,10 +4,13 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,49 +22,49 @@ public class pom_webDev extends BasePage {
 	}
 
 	@FindBy(xpath = "//input[@placeholder='What do you want to learn?']")
-	WebElement inputBar;
+	public WebElement inputBar;
 
 	@FindBy(xpath = "//button[@class='nostyle search-button']//div[@class='magnifier-wrapper']")
-	WebElement searchButton;
+	public WebElement searchButton;
 
 	@FindBy(xpath = "//label[contains(text(),'Level')]")
-	WebElement levelScroll;
+	public WebElement levelScroll;
 
 	@FindBy(xpath = "//span[contains(text(),'Beginner')]")
-	WebElement beginnerFilter;
+	public WebElement beginnerFilter;
 
 	@FindBy(xpath = "//label[contains(text(),'Educator')]")
-	WebElement educatorScroll;
+	public WebElement educatorScroll;
 
 	@FindBy(xpath = "//span[contains(text(),'English')]")
-	WebElement englishFilter;
+	public WebElement englishFilter;
 
 	@FindBy(xpath = "//h3[normalize-space()='Filter by']")
-	WebElement Scrollup;
+	public WebElement Scrollup;
 
 	@FindBy(xpath = "(//div[@class='css-kplcru'])[2]")
-	WebElement secondCourse;
+	public WebElement secondCourse;
 
 	@FindBy(xpath = "(//div[@class='css-kplcru'])[1]")
-	WebElement firstCourse;
+	public WebElement firstCourse;
 
 	@FindBy(xpath = "//*[@data-e2e=\"hero-module\"]//h1")
-	WebElement firstCourseHeading;
+	public WebElement firstCourseHeading;
 
-	@FindBy(xpath = "(//section[@class='css-3nq2m6']/div[2]/div[3]/div[@class='cds-119 cds-Typography-base css-h1jogs cds-121'])[2]")
-	WebElement firstCourseLearnTime;
+	@FindBy(xpath = "//div[contains(text(),'hours')][1]")
+	public WebElement firstCourseLearnTime;
 
-	@FindBy(xpath = "(//*[@data-e2e='key-information']//div[@class='cds-119 cds-Typography-base css-h1jogs cds-121'])[1]")
-	WebElement firstCourseRating;
+	@FindBy(xpath = "(//div[contains(text(),'4')])[1]")
+	public WebElement firstCourseRating;
 
 	@FindBy(xpath = "//*[@data-e2e='hero-module']//h1")
-	WebElement secondCourseHeading;
+	public WebElement secondCourseHeading;
 
-	@FindBy(xpath = "//section[@class='css-6hd39m']/div/div[2]/div/div[1]/div[1]")
-	WebElement secondCourseLearnTime;
+	@FindBy(xpath = "(//div[contains(text(),'hours')])[2]")
+	public WebElement secondCourseLearnTime;
 
-	@FindBy(xpath = "(//*[@data-e2e='key-information']//div[@class='cds-119 cds-Typography-base css-h1jogs cds-121'])[1]")
-	WebElement secondCourseRating;
+	@FindBy(xpath = "(//div[contains(text(),'4')])[2]")
+	public WebElement secondCourseRating;
 
 	String fileName = System.getProperty("user.dir") + "/src/test/resources/courseData.xlsx"; // storing the path of
 																								// excel
@@ -165,8 +168,10 @@ public class pom_webDev extends BasePage {
 			System.out.println("Heading of the Second Course: " + courseTwoHeading);
 
 			String courseTwoLearnTime = secondCourseLearnTime.getText();
-			System.out.println("Learning Time For Second Course:" + "Approx. 40 hours to complete");
+			System.out.println("Learning Time For Second Course:" + courseTwoLearnTime);
 
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+			
 			String courseTwoRating = secondCourseRating.getText();
 			System.out.println("Rating for the Second Course:" + courseTwoRating);
 
@@ -186,4 +191,5 @@ public class pom_webDev extends BasePage {
 
 		driver.switchTo().window(parentWindowId);
 	}
+
 }
