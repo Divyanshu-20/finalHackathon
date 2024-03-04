@@ -16,7 +16,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 		// report
 
 		dryRun = false, // checks mapping between scenario steps and step definition methods
-		publish = true;
+		publish = true,
 		monochrome = true) // To avoid junk characters in output
 public class testRun extends AbstractTestNGCucumberTests {
 
