@@ -13,7 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class helperClass {
 
-	static WebDriver driver;
+	public static WebDriver driver;
 	static Properties p;
 
 	public static WebDriver initializeBrowser() throws IOException {

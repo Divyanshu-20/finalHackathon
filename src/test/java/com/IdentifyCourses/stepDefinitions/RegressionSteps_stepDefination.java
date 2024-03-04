@@ -36,7 +36,11 @@ public class RegressionSteps_stepDefination extends helperClass {
 
 	@Given("user should see all courses")
 	public void user_should_see_all_courses() {
-		wd.scrollToFilterByHeader();
+		wd = new pom_webDev(helperClass.getDriver());
+		wd.enterSearchQuery();
+		wd.clickSearchButton();
+		wd.filterByLevelBeginner();
+		wd.filterByEducatorEnglish();
 	}
 
 	@When("user click on both course")
