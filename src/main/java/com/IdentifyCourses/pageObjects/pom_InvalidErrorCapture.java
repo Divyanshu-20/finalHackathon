@@ -67,7 +67,6 @@ public class pom_InvalidErrorCapture extends BasePage {
 
 	String fileName = System.getProperty("user.dir") + "/src/test/resources/courseData.xlsx"; // storing the path of excel
 	// file in "fileName"
-	Locators loc = new Locators(com.IdentifyCourses.factory.helperClass.getDriver());
 
 	public void clickBusinessesButton() {
 		businessesButton.click();

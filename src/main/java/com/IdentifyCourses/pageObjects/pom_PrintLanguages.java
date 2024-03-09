@@ -33,7 +33,6 @@ public class pom_PrintLanguages extends BasePage {
 	WebElement advancedLanguageCoursesLink;
 	
 	String fileName = System.getProperty("user.dir") + "/src/test/resources/courseData.xlsx"; 
-	Locators loc = new Locators(com.IdentifyCourses.factory.helperClass.getDriver());
 
 	public void clickExploreButton() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;

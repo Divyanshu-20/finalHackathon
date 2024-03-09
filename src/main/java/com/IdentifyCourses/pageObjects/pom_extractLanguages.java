@@ -31,7 +31,7 @@ public class pom_extractLanguages extends BasePage {
 	@FindBy(xpath = "//button[@aria-label='Show more Language options']//span[@class='cds-button-label'][normalize-space()='Show more']")
 	WebElement showMoreLanguagesButton;
 
-	@FindBy(xpath = "//div[@id='checkbox-group']//span[@class='cds-checkboxAndRadio-labelContent css-imksha']")
+	@FindBy(xpath = "(//div[starts-with(@id, 'checkbox-group')]/div)")
 	List<WebElement> languageCheckboxes;
 
 	@FindBy(xpath = "//*[@data-testid='search-filter-group-Learning Product']//label[contains(text(),'Learning Product')]")
@@ -44,7 +44,6 @@ public class pom_extractLanguages extends BasePage {
 	List<WebElement> Level;
 
 	String fileName = System.getProperty("user.dir") + "/src/test/resources/courseData.xlsx";
-	Locators loc = new Locators(com.IdentifyCourses.factory.helperClass.getDriver());
 
 	public void enterSearchKeyword() {
 		searchInput.sendKeys("Language Learning");
@@ -78,7 +77,7 @@ public class pom_extractLanguages extends BasePage {
 
 		for (int i = 1; i <= languageCheckboxes.size(); i++) {
 			WebElement loopingLang = driver.findElement(By.xpath(
-					"(//div[@id=\"checkbox-group\"]//span[@class='cds-checkboxAndRadio-labelContent css-imksha'])[" + i
+					"(//div[starts-with(@id, 'checkbox-group')]/div)[" + i
 							+ "]"));
 			String langType = loopingLang.getText();
 			System.out.println("Language " + i + ": " + langType);

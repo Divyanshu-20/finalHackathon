@@ -1,5 +1,6 @@
 Feature: Identify Courses
 
+  @First
   Scenario: Validate Display of First Two Web Development Courses for Beginners
     Given a user is on the website homepage
     When the user inputs "web development courses" as the search query

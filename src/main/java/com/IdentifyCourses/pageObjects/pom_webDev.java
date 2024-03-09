@@ -51,10 +51,10 @@ public class pom_webDev extends BasePage {
 	@FindBy(xpath = "//*[@data-e2e=\"hero-module\"]//h1")
 	public WebElement firstCourseHeading;
 
-	@FindBy(xpath = "//div[contains(text(),'hours')][1]")
+	@FindBy(xpath = "(//div[contains(text(),'hours')])[2]")
 	public WebElement firstCourseLearnTime;
 
-	@FindBy(xpath = "(//div[contains(text(),'4')])[1]")
+	@FindBy(xpath = "(//div[contains(text(),'4')])[2]")
 	public WebElement firstCourseRating;
 
 	@FindBy(xpath = "//*[@data-e2e='hero-module']//h1")
@@ -66,10 +66,8 @@ public class pom_webDev extends BasePage {
 	@FindBy(xpath = "(//div[contains(text(),'4')])[2]")
 	public WebElement secondCourseRating;
 
-	String fileName = System.getProperty("user.dir") + "/src/test/resources/courseData.xlsx"; // storing the path of
-																								// excel
-																								// file in "fileName"
-	Locators loc = new Locators(com.IdentifyCourses.factory.helperClass.getDriver());
+	String fileName = System.getProperty("user.dir") + "/src/test/resources/courseData.xlsx"; 																							// excel																							// file in "fileName"
+	
 
 	// creating an instance for locators
 
